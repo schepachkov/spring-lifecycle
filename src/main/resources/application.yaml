@@ -1,0 +1,7 @@
+spring.application.name: springlifecycle
+
+vars:
+  fridge:
+    name: 'Frost'
+  product:
+    commonName: 'Tomato'
