@@ -9,20 +9,21 @@ import ru.schepachkov.springlifecycle.kitchen.Product;
 @SpringBootApplication
 public class SpringlifecycleApplication {
 
-	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(SpringlifecycleApplication.class, args);
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(SpringlifecycleApplication.class, args);
 
-		Fridge fidge1 = context.getBean("fridge", Fridge.class);
-		Fridge fidge2 = context.getBean("fridge", Fridge.class);
+        Fridge fridge1 = context.getBean("fridge", Fridge.class);
+        System.out.println("I see in my hand - " + fridge1.getCurrentProduct());
+        fridge1.takeAnotherProduct();
+        System.out.println("I see in my hand - " + fridge1.getCurrentProduct());
 
-		Product product1 = context.getBean("product", Product.class);
-		Product product2 = context.getBean("product", Product.class);
+        Product product1 = context.getBean("product", Product.class);
+        Product product2 = context.getBean("product", Product.class);
 
 
-		System.out.println(fidge1);
-		System.out.println(fidge2);
-		System.out.println(product1);
-		System.out.println(product2);
-	}
+        System.out.println(fridge1);
+        System.out.println(product1);
+        System.out.println(product2);
+    }
 
 }
