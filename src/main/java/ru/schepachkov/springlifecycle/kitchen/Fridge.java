@@ -1,9 +1,13 @@
 package ru.schepachkov.springlifecycle.kitchen;
 
+import ru.schepachkov.springlifecycle.kitchen.lifecycle.LifecycleMarker;
+
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+@LifecycleMarker
 public class Fridge {
 
     private String name;
@@ -27,6 +31,12 @@ public class Fridge {
     public Product getCurrentProduct() {
         return currentProduct;
     }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("Post construct on bean" + this);
+    }
+
 
     @Override
     public String toString() {
